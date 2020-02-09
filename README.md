@@ -8,10 +8,10 @@ sap-baselines: Sap-baselines
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.sap-baselines](https://galaxy.ansible.com/devops-toolbox.sap-baselines)
+[https://galaxy.ansible.com/devopstoolbox.sap-baselines](https://galaxy.ansible.com/devopstoolbox.sap-baselines)
 
 ```bash
-ansible-galaxy install devops-toolbox.sap-baselines
+ansible-galaxy install devopstoolbox.sap-baselines
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: sap-baselines is configured
       import_role:
-        name: devops-toolbox.sap-baselines
+        name: devopstoolbox.sap-baselines
       vars:
         sap-baselines_packages_state: present
         sap-baselines_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)

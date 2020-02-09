@@ -1,0 +1,27 @@
+---
+# Install sap-baselines packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ sap-baselines_packages_remove }}"
+    state: absent
+  become: true
+  when: sap-baselines_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ sap-baselines_packages_repos }}"
+    state: "{{ sap-baselines_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ sap-baselines_packages_prereq }}"
+    state: "{{ sap-baselines_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ sap-baselines_packages_install }}"
+    state: "{{ sap-baselines_packages_state }}"
+  become: true

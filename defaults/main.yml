@@ -1,0 +1,19 @@
+---
+# defaults file for sap-baselines
+
+sap-baselines_packages_state: present
+sap-baselines_remove_packages: true
+sap-baselines_enable_service: true
+sap-baselines_enable_selinux: true
+sap-baselines_copy_templates: true
+sap-baselines_firewall_configure: true
+sap-baselines_firewall_rules:
+  - service: ssh
+  - port: 3389
+sap-baselines_users:
+  - user: devops
+    group: docker
+sap-baselines_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true

@@ -1,0 +1,11 @@
+---
+# Configure sap-baselines
+
+- name: service is enabled and started
+  service:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  become: true
+  loop: "{{ sap-baselines_services_enable }}"
+  when: sap-baselines_enable_service

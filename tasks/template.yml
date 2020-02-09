@@ -1,0 +1,10 @@
+---
+# Template configuration files for sap-baselines
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ sap-baselines_templates_copy }}"
+  when: sap-baselines_copy_templates

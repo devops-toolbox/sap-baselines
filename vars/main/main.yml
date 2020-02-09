@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+sap-baselines_repos_create: "{{ _sap-baselines_repos_create['all']
+  | union ( _sap-baselines_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+sap-baselines_repos_download: "{{ _sap-baselines_repos_download['all']
+  | union ( _sap-baselines_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+sap-baselines_templates_copy: "{{ _sap-baselines_templates_copy['all']
+  | union ( _sap-baselines_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+sap-baselines_services_enable: "{{ _sap-baselines_services_enable['all']
+  | union ( _sap-baselines_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+sap-baselines_selinux_enable: "{{ _sap-baselines_selinux_enable['all']
+  | union ( _sap-baselines_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+sap-baselines_packages_remove: "{{ _sap-baselines_packages_remove['all']
+  | union ( _sap-baselines_packages_remove[my_os]
+  | default([]) ) }}"
+sap-baselines_packages_repos: "{{ _sap-baselines_packages_repos['all']
+  | union ( _sap-baselines_packages_repos[my_os]
+  | default([]) ) }}"
+sap-baselines_packages_prereq: "{{ _sap-baselines_packages_prereq['all']
+  | union ( _sap-baselines_packages_prereq[my_os]
+  | default([]) ) }}"
+sap-baselines_packages_install: "{{ _sap-baselines_packages_install['all']
+  | union ( _sap-baselines_packages_install[my_os]
+  | default([]) ) }}"
